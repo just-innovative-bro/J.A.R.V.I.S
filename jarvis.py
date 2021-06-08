@@ -430,8 +430,8 @@ if __name__ == "__main__":
                 elif there_exists(['ask',"about"]):
                     speak('I can answer to computational and geographical questions  and what question do you want to ask now')
                     question=takeCommand()
-                    app_id="QTLYH7-WKR48VLLLA"
-                    client = wolframalpha.Client('QTLYH7-WKR48VLLLA')
+                    app_id="your app id"
+                    client = wolframalpha.Client('your app id')
                     res = client.query(question)
                     answer = next(res.results).text
                     speak(answer)
