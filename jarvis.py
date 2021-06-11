@@ -12,7 +12,7 @@ import requests
 import random
 import bs4 as bs
 import urllib.request
-from playsound import playsound
+from playsound import playsound                 #pip install playsound
 import wolframalpha                             #pip install wolframalpha
 
 class person:
@@ -21,7 +21,7 @@ class person:
         self.name = name
 
 class jarvis:
-    name = ''
+    name = 'jarvis'
     def setName(self, name):
         self.name = name
 
@@ -154,11 +154,11 @@ def null():
             break         
 
 def setup():
-    playsound('D:/javapro/j.a.r.v.i.s/jarvismp/Jarvis Welcome Back Sir _ Jarvis Voice.mp3')
+    playsound('D:/javapro/j.a.r.v.i.s/jarvismp/Jarvis Welcome Back Sir _ Jarvis Voice.mp3')      #change path where you have saved 
     print('playing sound using  playsound')
 
 def intro():
-    playsound('D:/javapro/j.a.r.v.i.s/jarvismp/Ironman Jarvis.mp3')
+    playsound('D:/javapro/j.a.r.v.i.s/jarvismp/Ironman Jarvis.mp3')                              #change path where you have saved
     print('playing sound using  playsound')
 
 if __name__ == "__main__":
