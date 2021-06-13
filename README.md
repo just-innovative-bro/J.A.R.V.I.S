@@ -61,12 +61,13 @@ open terminal and type these to install
 
 ```python
 pip install pyttsx3
-pip install speechRecognition
+pip install SpeechRecognition
 pip install wikipedia
-pip install pyautogui
+pip install PyAutoGUI
 pip install pyjokes
-pip install pyaudio
-pip install wolframalpha  
+pip install PyAudio
+pip install wolframalpha 
+pip install pysound
 ```
 for PyAudio if there is any problem in installing use this [click here](https://www.lfd.uci.edu/~gohlke/pythonlibs/) and search PyAudio and install
 or use this youtube video [click here](https://www.youtube.com/watch?v=-3am_5jMzJ4&t=307s)                                                                              
@@ -92,6 +93,16 @@ For App_Id of [Wolfram|Aplha App id](https://www.wolframalpha.com/) follow below
 5. In the next dialog box, give the app a suitable name and description.
 6. Note down the APPID that appears in the next dialog box. This app id will be specific to the application.
 
+
+## Documentation
+1. [Pyttsx3](https://pypi.org/project/pyttsx3/)
+2. [SpeechRecognition](https://pypi.org/project/SpeechRecognition/)
+3. [Wikipedia](https://pypi.org/project/wikipedia/)
+4. [PyAutoGUI](https://pypi.org/project/PyAutoGUI/)
+5. [Pyjokes](https://pypi.org/project/pyjokes/)
+6. [Pyaudio](https://pypi.org/project/PyAudio/)
+7. [Wolframalpha](https://pypi.org/project/wolframalpha/)
+8. [Pysound](https://pypi.org/project/pysound/)
 ## Contributing
 Pull requests are welcome. Please open an issue first to discuss what you would like to change for major changes.
 
