@@ -60,14 +60,14 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install.
 open terminal and type these to install
 
 ```python
-pip install pyttsx3
+pip install Pyttsx3
 pip install SpeechRecognition
-pip install wikipedia
+pip install Wikipedia
 pip install PyAutoGUI
-pip install pyjokes
+pip install Pyjokes
 pip install PyAudio
-pip install wolframalpha 
-pip install pysound
+pip install Wolframalpha 
+pip install Pysound
 ```
 for PyAudio if there is any problem in installing use this [click here](https://www.lfd.uci.edu/~gohlke/pythonlibs/) and search PyAudio and install
 or use this youtube video [click here](https://www.youtube.com/watch?v=-3am_5jMzJ4&t=307s)                                                                              
