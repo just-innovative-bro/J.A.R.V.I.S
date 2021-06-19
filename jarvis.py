@@ -86,7 +86,7 @@ def sendEmail(to, content):
 
 def screenshot():
      img = pyautogui.screenshot()
-     img.save("D:/screenshot/screen.png")
+     img.save("screen.png")
 
 def cpu():
     usage = str(psutil.cpu_percent())
@@ -154,11 +154,11 @@ def null():
             break         
 
 def setup():
-    playsound('D:/javapro/j.a.r.v.i.s/jarvismp/Jarvis Welcome Back Sir _ Jarvis Voice.mp3')      #change path where you have saved 
+    playsound('Jarvis Welcome Back Sir _ Jarvis Voice.mp3')      
     print('playing sound using  playsound')
 
 def intro():
-    playsound('D:/javapro/j.a.r.v.i.s/jarvismp/Ironman Jarvis.mp3')                              #change path where you have saved
+    playsound('Ironman Jarvis.mp3')                              
     print('playing sound using  playsound')
 
 if __name__ == "__main__":
