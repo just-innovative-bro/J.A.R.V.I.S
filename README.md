@@ -62,12 +62,26 @@ open terminal and type these to install
 
 ```python
 pip install Pyttsx3
+```
+```python
 pip install SpeechRecognition
+```
+```python
 pip install Wikipedia
+```
+```python
 pip install PyAutoGUI
+```
+```python
 pip install Pyjokes
+```
+```python
 pip install PyAudio
+```
+```python
 pip install Wolframalpha 
+```
+```pyhton
 pip install Pysound
 ```
 for PyAudio if there is any problem in installing use this [click here](https://www.lfd.uci.edu/~gohlke/pythonlibs/) and search PyAudio and install
