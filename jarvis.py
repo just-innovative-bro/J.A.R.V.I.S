@@ -14,10 +14,7 @@ import bs4 as bs
 import urllib.request
 from playsound import playsound
 import wolframalpha                             #pip install wolframalpha
-from tkinter import *
 
-root = Tk()
-root.wm_title("JARVIS")
 class person:
     name = ''
     def setName(self, name):
@@ -83,9 +80,9 @@ def open():
     url = "https://github.com/https-github-com-zameel28/J.A.R.V.I.S"
     webbrowser.get().open(url)
 
-def sendEmail(to, content):
-    mail = "blynkofzameel@gmail.com"
-    password = "Blynk123"
+def sendEmail(to, content):                                   #makesure that you you turned on less secure apps in google account
+    mail = "yourmail@gmail.com"
+    password = "yourpassword"
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
@@ -261,6 +258,8 @@ if __name__ == "__main__":
                     webbrowser.get().open(url)
                     speak("Here is what I found for on google")
                     null()
+                elif there_exists(["support","contact"]):
+                    open()
                 elif "stock price of" in query:
                     search_term = query.split("for")[-1]
                     url = "https://google.com/search?q=" + search_term
