@@ -13,7 +13,7 @@ It will talk to you and wishes you concerning the time,
 When you command as **tell me a joke** and can send emails and writes mail content what you speak it converts speech to text, this function works when you say **send mail**. It can take screenshot shutdown, restart, and log out through voice commands. It will also tell time with the command **tell time**. Tells the **CPU** working frequency and can search Wikipedia and opens some top websites to search meanings of words this project will be extended concerning time for me and my team.
 
 ## Updates
-New features are added, for every command initation should be **JARVIS** and new support page is added.for sending mail it asks the recivers mail id
+New features are added, for every command initation should be **JARVIS** and new support page is added.for sending mail it asks the recivers mail id.
 
 ## Commands
  
