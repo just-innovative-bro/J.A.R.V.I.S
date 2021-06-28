@@ -1,4 +1,4 @@
-# J.A.R.V.I.S-AVM4
+# J.A.R.V.I.S
 **Just A Rather Very Intelligent System**--Jarvis--
  the virtual assistant made by python  
 
@@ -13,7 +13,7 @@ It will talk to you and wishes you concerning the time,
 When you command as **tell me a joke** and can send emails and writes mail content what you speak it converts speech to text, this function works when you say **send mail**. It can take screenshot shutdown, restart, and log out through voice commands. It will also tell time with the command **tell time**. Tells the **CPU** working frequency and can search Wikipedia and opens some top websites to search meanings of words this project will be extended concerning time for me and my team.
 
 ## Updates
-New features are added, new startup sound. new introduction can solve mathematical and geographical problems. Sinricpro dashboard is added for home automation.
+New features are added, for every command initation should be **JARVIS** and new support page is added.for sending mail it asks the recivers mail id
 
 ## Commands
  
@@ -44,7 +44,8 @@ Do you know anything - tells what you said in remember
 Write a note - writes a note what you speak                                                           
 Show note - reads the written note                                           
 Take a screenshot - takes a screenshot                                                                  
-Play music - plays music on your system                                                          
+Play music - plays music on your system                                                                                                               
+Support - opens github support
 CPU clocks - tells CPU frequency                                                                    
 Tell me a joke - tells a joke                                                                    
 Not for you - comments your commands                                                                    
