@@ -12,16 +12,19 @@ import requests
 import random
 import bs4 as bs
 import urllib.request
-from playsound import playsound                 #pip install playsound
+from playsound import playsound
 import wolframalpha                             #pip install wolframalpha
+from tkinter import *
 
+root = Tk()
+root.wm_title("JARVIS")
 class person:
     name = ''
     def setName(self, name):
         self.name = name
 
 class jarvis:
-    name = 'jarvis'
+    name = ''
     def setName(self, name):
         self.name = name
 
@@ -76,12 +79,19 @@ def takeCommand():
         return "None"
     return query
 
+def open():
+    url = "https://github.com/https-github-com-zameel28/J.A.R.V.I.S"
+    webbrowser.get().open(url)
+
 def sendEmail(to, content):
+    mail = "blynkofzameel@gmail.com"
+    password = "Blynk123"
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
-    server.login('jarvis@gmail.com', 'jarvis123')
-    server.sendmail('xyz@gmail.com', to, content)
+    server.login(mail, password)
+    mailto = to
+    server.sendmail(mailto, to, content)
     server.close()
 
 def screenshot():
@@ -150,22 +160,21 @@ def tellDay():
 def null():
     while  True:
         query = takeCommand().lower() 
-        if  "ok jarvis" in query:
+        if  "jarvis" in query:
+            speak("ready")
             break         
 
 def setup():
-    playsound('Jarvis Welcome Back Sir _ Jarvis Voice.mp3')      
-    print('playing sound using  playsound')
+    playsound('Jarvis Welcome Back Sir _ Jarvis Voice.mp3')
 
 def intro():
-    playsound('Ironman Jarvis.mp3')                              
-    print('playing sound using  playsound')
+    playsound('Ironman Jarvis.mp3')
+
 
 if __name__ == "__main__":
-    query = takeCommand().lower()
     while True:
         query = takeCommand().lower()
-        if there_exists(["hey jarvis" , "ok jarvis", "hello jarvis", "hi jarvis"]):
+        if there_exists(["hey jarvis" , "ok jarvis", "hello jarvis", "hi jarvis","jarvis"]):
             setup()
             wishMe()
             while True:
@@ -180,42 +189,41 @@ if __name__ == "__main__":
                     speak("According to Wikipedia")
                     print(results)
                     speak(results)                         
-
+                    null()
                 elif there_exists(['play music', 'play songs']):
-                    music_dir = 'D:/songs'
+                    music_dir = 'songs'
                     songs = os.listdir(music_dir)
                     print(songs)    
                     os.startfile(os.path.join(music_dir, songs[0]))
-
+                    null()
                 elif 'time' in query:
                     strTime = datetime.datetime.now().strftime("%H:%M")    
                     speak(f"Sir, the time is {strTime}")
-
+                    null()
                 elif there_exists(["date"]):
                     date()    
-
+                    null()
                 elif 'send email' in query:
                     try:
                         speak("What should I say?")
                         content = takeCommand()
-                        to = "xyz@gmail.com"    
+                        to = str(input("Enter Recvers Mail ID : "))    
                         sendEmail(to, content)
                         speak("Email has been sent!")
                     except Exception as e:
                         print(e)
                         speak("Sorry i can't send mail sir") 
-
+                    null()    
                 elif there_exists(['say about you', 'introduce yourself']):
                     intro() 
                     speak("I am created by zameel ali, subhash and naveen")
                     speak("I was made by using python")
                     speak("i am born on 25th may 2020")
                     speak("hope you got the information")
-
-                elif there_exists(["jarvis exit", "jarvis quit", "jarvis bye","jarvis offline"]):
-                        speak("i am turning off systems")
-                        quit()
-
+                    null()
+                elif there_exists(["exit", "quit", "bye","offline"]):
+                    speak("i am turning off systems")
+                    quit()
                 elif "logout" in query:
                     os.system("shutdown - 1")
 
@@ -232,84 +240,78 @@ if __name__ == "__main__":
                     remember = open("data.txt", "w")
                     remember.write(data)
                     remember.close()
-                
+                    null()   
                 elif there_exists(['do you remember?', 'what did i say', 'do you know anything']):
                     remember = open("data.txt", "r")
                     speak("you said me to remember this" + remember.read())
-
+                    null()
                 elif "take a screenshot" in query:
                     screenshot()
                     speak("Done!")
-                
+                    null()                
                 elif "cpu clock" in query:
                     cpu()
-               
+                    null()   
                 elif there_exists(['tell me a joke', "let's make some fun"]):
                     jokes()
-        
+                    null()
                 elif there_exists(["weather forecast"]):
                     search_term = query.split("for")[-1]
                     url = "https://www.google.com/search?sxsrf=ACYBGNSQwMLDByBwdVFIUCbQqya-ET7AAA%3A1578847393212&ei=oUwbXtbXDN-C4-EP-5u82AE&q=weather&oq=weather&gs_l=psy-ab.3..35i39i285i70i256j0i67l4j0i131i67j0i131j0i67l2j0.1630.4591..5475...1.2..2.322.1659.9j5j0j1......0....1..gws-wiz.....10..0i71j35i39j35i362i39._5eSPD47bv8&ved=0ahUKEwiWrJvwwP7mAhVfwTgGHfsNDxsQ4dUDCAs&uact=5"
                     webbrowser.get().open(url)
                     speak("Here is what I found for on google")
-
+                    null()
                 elif "stock price of" in query:
                     search_term = query.split("for")[-1]
                     url = "https://google.com/search?q=" + search_term
                     webbrowser.get().open(url)
                     speak("Here is what I found for " + search_term + " on google")    
-
+                    null()
                 elif "open youtube" in query:
                     search_term = query.split("for")[-1]
                     search_term = search_term.replace("open youtube","").replace("search","")
                     url = "https://www.youtube.com/results?search_query=" + search_term
                     webbrowser.get().open(url)
-                    speak("Here is what I found for " + search_term + "on youtube")
-
+                    speak("Here is what I found for " + search_term + "on youtube")    
+                    null()
                 elif there_exists(["where am i"]):
-                    Ip_info = requests.get('https://api.ipdata.co?api-key=test').json()
-                    loc = Ip_info['region']
-                    speak(f"You must be somewhere in {loc}")    
-     
-                elif there_exists(["what is my exact location"]):
                     url = "https://www.google.com/maps/search/Where+am+I+?/"
                     webbrowser.get().open(url)
                     speak("You must be somewhere near here, as per Google maps")
-
+                    null()
                 elif there_exists(['hey','hi','hello','ok']):
                     greetings = ["hey, how can I help you" + person_obj.name, "hey, what's up?" + person_obj.name, "I'm listening" + person_obj.name, "how can I help you?" + person_obj.name, "hello" + person_obj.name]
                     greet = greetings[random.randint(0,len(greetings)-1)]
                     speak(greet)
-
-    
+                    null()
                 elif there_exists(["what is your name","what's your name","tell me your name"]):
 
                     if person_obj.name:
                         speak(f"My name is {jarvis.name}, {person_obj.name}") #gets users name from voice input
                     else:
                         speak(f"My name is {jarvis_obj.name}. what's your name sir?") #incase you haven't provided your name.
-
+                    null()
                 elif there_exists(["my name is"]):
                     person_name = query.split("is")[-1].strip()
                     speak("okay, i will remember that sir" + person_name)
                     person_obj.setName(person_name) # remember name in person object
-    
+                    null()
                 elif there_exists(["what is my name"]):
                     speak("Your name must be " + person_obj.name)
-    
+                    null()
                 elif there_exists(["your name should be"]):
                     jarvis_name = query.split("be")[-1].strip()
                     speak("okay, i will remember that my name is " + jarvis_name)
                     jarvis.setName(jarvis_name) # remember name in asis object
-
+                    null()
                 elif there_exists(["how are you","how are you doing"]):
                     speak("I'm very well, thanks for asking " + person_obj.name + "sir")
-
+                    null()
                 elif there_exists(["toss coin","flip coin"]):
                     moves=["head", "tails"]   
                     cmove=random.choice(moves)
                     speak("I chose " + cmove)
-
+                    null()
                 if there_exists(["plus","minus","multiply","divide","power","+","-","*","/"]):
                     opr = query.split()[1]
 
@@ -325,7 +327,7 @@ if __name__ == "__main__":
                         speak(int(query.split()[0]) ** int(query.split()[2]))
                     else:
                         speak("Wrong Operator")
-
+                    null()
                 elif there_exists(["game","let's play a game"]):
                     voice_data = record_audio("choose among rock paper or scissor")
                     moves=["rock", "paper", "scissor"]
@@ -351,7 +353,7 @@ if __name__ == "__main__":
                         speak("Player wins")
                     elif pmove== "scissor" and cmove== "rock":
                         speak("Computer wins")
-
+                    null()
                 elif there_exists(["definition of"]):
                     definition=record_audio("what do you need the definition of")
                     url=urllib.request.urlopen('https://en.wikipedia.org/wiki/'+definition)
@@ -368,45 +370,44 @@ if __name__ == "__main__":
                                 speak ('Here is what i found '+definitions[2])
                         else:
                             speak("im sorry i could not find the definition for "+definition)
-
+                    null()
                 elif there_exists(["search for"]) and 'youtube' not in query:
                     search_term = query.split("for")[-1]
                     url = "https://google.com/search?q=" + search_term
                     webbrowser.get().open(url)
                     speak("Here is what I found for" + search_term + "on google")
-
-                elif there_exists(["not a comment"]):
-                    null()    
-
+                    null()
                 elif there_exists(["my mail","my gmail"]):
                     url = "https://mail.google.com/mail/u/0/?tab=rm#inbox"
                     webbrowser.get().open(url)
-
+                    null()
                 elif there_exists(["calender"]):
                     url="https://calendar.google.com/calendar/u/0/r?tab=rc"
                     webbrowser.get().open(url)
-
+                    null()
                 elif there_exists(["news"]):
                     url="https://news.google.com/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRGx1YlY4U0FtVnVHZ0pKVGlnQVAB?hl=en-IN&gl=IN&ceid=IN%3Aen"
                     webbrowser.get().open(url)
-
+                    null()
                 elif there_exists(["where is"]):
                     query = query.replace("where is", "")
                     location = query
                     speak("User asked to Locate")
                     speak(location)
-                    webbrowser.open("https://www.google.nl / maps / place/" + location + "")
-
+                    webbrowser.open("https://www.google.co.in/maps/place/" + location + "")
+                    null()
                 elif there_exists(["open home dashboard"]):
                     url="https://portal.sinric.pro/dashboard"
-                    webbrowser.get().open(url)   
+                    webbrowser.get().open(url) 
+                    speak("here it is.")
+                    null()  
 
                 elif "how are you" in query:
                     speak("I'm fine, glad you me that")
- 
+                    null()
                 elif "i love you" in query:
                     speak("It's hard to understand")
-
+                    null()
                 elif "write a note" in query:
                     speak("What should i write, sir")
                     note = takeCommand()
@@ -420,22 +421,30 @@ if __name__ == "__main__":
                         file.write(note)
                     else:
                         file.write(note)
-         
+                    null()    
                 elif "show note" in query:
                     speak("Showing Notes")
                     file = open("jarvis.txt", "r")
                     print(file.read())
                     speak(file.read())
-
-                elif there_exists(['ask',"about"]):
+                    null()
+                elif there_exists(['ask',"question"]):
                     speak('I can answer to computational and geographical questions  and what question do you want to ask now')
                     question=takeCommand()
-                    app_id="your app id"
-                    client = wolframalpha.Client('your app id')
+                    app_id="QTLYH7-WKR48VLLLA"
+                    client = wolframalpha.Client('QTLYH7-WKR48VLLLA')
                     res = client.query(question)
                     answer = next(res.results).text
                     speak(answer)
                     print(answer)
-
-                elif "which day it is" in query:
-                    tellDay()    
+                    null()
+                elif "day" in query:
+                    tellDay()  
+                    null()
+                elif there_exists(["route to"]):
+                    search_term = query.split("to")[-1]
+                    url = "https://www.google.co.in/maps/dir/" + search_term
+                    webbrowser.get().open(url)
+                    speak("Here is what I found for" + search_term + "on google maps")  
+                    null()
+                    
