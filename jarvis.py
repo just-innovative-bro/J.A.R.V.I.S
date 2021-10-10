@@ -1,3 +1,4 @@
+import audioplayer
 import pyttsx3                                  #pip install pyttsx3
 import speech_recognition as sr                 #pip install speechRecognition
 import datetime
@@ -8,12 +9,12 @@ import smtplib
 import pyautogui                                #pip install pyautogui
 import psutil                                   #pip install psutil
 import pyjokes                                  #pip install pyjokes
-import requests
 import random
 import bs4 as bs
 import urllib.request
-from playsound import playsound
 import wolframalpha                             #pip install wolframalpha
+from audioplayer import AudioPlayer                         
+
 
 class person:
     name = ''
@@ -81,8 +82,8 @@ def open():
     webbrowser.get().open(url)
 
 def sendEmail(to, content):                                   #makesure that you you turned on less secure apps in google account
-    mail = "yourmail@gmail.com"
-    password = "yourpassword"
+    mail = "blynkofzameel@gmail.com"
+    password = "Blynk123"
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
@@ -162,10 +163,10 @@ def null():
             break         
 
 def setup():
-    playsound('Jarvis Welcome Back Sir _ Jarvis Voice.mp3')
+    audioplayer.AudioPlayer("Jarvis Welcome Back Sir _ Jarvis Voice.mp3").play(block=True)
 
 def intro():
-    playsound('Ironman Jarvis.mp3')
+    audioplayer.AudioPlayer("Ironman Jarvis.mp3").play(block=True)
 
 
 if __name__ == "__main__":
@@ -211,7 +212,7 @@ if __name__ == "__main__":
                         print(e)
                         speak("Sorry i can't send mail sir") 
                     null()    
-                elif there_exists(['say about you', 'introduce yourself']):
+                elif there_exists(['about you','say about you', 'introduce yourself']):
                     intro() 
                     speak("I am created by zameel ali, subhash and naveen")
                     speak("I was made by using python")
@@ -446,4 +447,3 @@ if __name__ == "__main__":
                     webbrowser.get().open(url)
                     speak("Here is what I found for" + search_term + "on google maps")  
                     null()
-                    
