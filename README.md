@@ -83,7 +83,7 @@ pip install PyAudio
 pip install Wolframalpha 
 ```
 ```pyhton
-pip install Audioplayer
+pip install AudioPlayer
 ```
 for PyAudio if there is any problem in installing use this [click here](https://www.lfd.uci.edu/~gohlke/pythonlibs/) and search PyAudio and install
 or use this youtube video [click here](https://www.youtube.com/watch?v=-3am_5jMzJ4&t=307s)                                                                              
