@@ -14,14 +14,7 @@ import bs4 as bs
 import urllib.request
 import wolframalpha                             #pip install wolframalpha
 from audioplayer import AudioPlayer                         
-#from PyQt5 import QtWidgets, QtGui, QtCore
-#from PyQt5.Qtcore import QTimer, QTime, QCate ,Qt
-#from PyQt5.QtGui import QMovie
-#from PyQt5.QtCore import *
-#from PyQt5.QtGui import *
-#from PyQt5.QtWidgets import *
-#from PyQt5.uic import loadUiType
-#from jarvisUI import ui_jarvisUI
+
 
 
 
