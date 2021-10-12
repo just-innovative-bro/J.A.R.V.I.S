@@ -84,8 +84,8 @@ def open():
     webbrowser.get().open(url)
 
 def sendEmail(to, content):                                   #makesure that you you turned on less secure apps in google account
-    mail = "blynkofzameel@gmail.com"
-    password = "Blynk123"
+    mail = "yourmail@gmail.com"
+    password = "pass123"
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
