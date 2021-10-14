@@ -16,6 +16,7 @@ import wolframalpha                             #pip install wolframalpha
 from audioplayer import AudioPlayer                         
 
 
+
 class person:
     name = ''
     def setName(self, name):
@@ -81,9 +82,7 @@ def open():
     url = "https://github.com/https-github-com-zameel28/J.A.R.V.I.S"
     webbrowser.get().open(url)
 
-def sendEmail(to, content):                                   #makesure that you you turned on less secure apps in google account
-    mail = "blynkofzameel@gmail.com"
-    password = "Blynk123"
+
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
